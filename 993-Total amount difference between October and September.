@@ -1,0 +1,2 @@
+SELECT
+(SELECT SUM(Total_amount) FROM OCT) - (SELECT SUM(Total_amount) FROM sep) AS difference_OCT_SEP
