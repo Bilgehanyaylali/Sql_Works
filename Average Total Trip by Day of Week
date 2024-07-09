@@ -1,0 +1,18 @@
+SELECT 
+    AVG(Daily_Trip_Count) AS avg_daily_trip_count,
+    Day_of_Week
+FROM (
+    SELECT 
+        CONVERT(DATE, lpep_pickup_datetime) AS Date,
+        DATENAME(WEEKDAY, lpep_pickup_datetime) AS Day_of_Week,
+        COUNT(*) AS Daily_Trip_Count
+    FROM 
+        sep
+    GROUP BY 
+        CONVERT(DATE, lpep_pickup_datetime),
+        DATENAME(WEEKDAY, lpep_pickup_datetime)
+) AS DailyTrips
+GROUP BY 
+    Day_of_Week
+ORDER BY 
+    Day_of_Week
