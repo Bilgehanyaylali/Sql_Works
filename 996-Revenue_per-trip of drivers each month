@@ -1,0 +1,11 @@
+SELECT
+  OCT.driver_id,
+  avg_oct,
+  avg_sep,
+  avg_oct - avg_sep AS revenue_differences
+FROM
+  (SELECT driver_id, AVG(Total_amount) AS avg_oct FROM oct GROUP BY driver_id) AS OCT
+LEFT JOIN
+  (SELECT driver_id, AVG(Total_amount) AS avg_sep FROM sep GROUP BY driver_id) AS SEP
+ON OCT.driver_id = SEP.driver_id
+ORDER BY 1
