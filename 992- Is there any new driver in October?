@@ -1,0 +1,5 @@
+SELECT
+DISTINCT O.driver_id AS october_drivers ,S.driver_id AS september_driver
+FROM oct AS O
+LEFT JOIN sep AS S ON O.driver_id = S.driver_id
+WHERE S.driver_id IS NULL
