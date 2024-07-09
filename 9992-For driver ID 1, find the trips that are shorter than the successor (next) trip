@@ -1,0 +1,11 @@
+SELECT
+	table1.trip_id AS current_trip_id,
+    table1.trip_distance AS current_trip_distance,
+    table2.trip_id AS previous_trip_id,
+    table2.trip_distance AS next_trip_distance
+FROM OCT AS table1
+JOIN OCT table2 ON table1.trip_id=table2.trip_id-1
+WHERE 
+table1.driver_id=1
+and
+table1.Trip_distance < table2.Trip_distance
