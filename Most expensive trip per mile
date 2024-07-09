@@ -1,0 +1,8 @@
+SELECT TOP 1
+Total_amount, Trip_distance, 
+CASE
+	WHEN Trip_distance=0 THEN  NULL
+	ELSE (Total_amount/Trip_distance)
+END AS ratio  
+FROM sep 
+ORDER BY ratio DESC
