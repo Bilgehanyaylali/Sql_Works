@@ -1,0 +1,5 @@
+SELECT 
+lpep_pickup_hour ,count(trip_id) 
+FROM sep
+GROUP BY lpep_pickup_hour
+ORDER BY lpep_pickup_hour desc
