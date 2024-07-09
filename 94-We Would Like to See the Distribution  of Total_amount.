@@ -1,0 +1,25 @@
+SELECT
+    CASE
+        WHEN Total_amount >= 0 AND Total_amount < 5 THEN '0-5'
+        WHEN Total_amount >= 5 AND Total_amount < 10 THEN '5-10'
+        WHEN Total_amount >= 10 AND Total_amount < 15 THEN '10-15'
+        WHEN Total_amount >= 15 AND Total_amount < 20 THEN '15-20'
+        WHEN Total_amount >= 20 AND Total_amount < 25 THEN '20-25'
+        WHEN Total_amount >= 25 AND Total_amount < 30 THEN '25-30'
+        WHEN Total_amount >= 30 AND Total_amount <= 35 THEN '30-35'
+        ELSE '35+'
+    END AS Payment_Range_in_Dollars,
+    COUNT(*) AS Trip_count
+FROM sep
+GROUP BY 
+CASE
+        WHEN Total_amount >= 0 AND Total_amount < 5 THEN '0-5'
+        WHEN Total_amount >= 5 AND Total_amount < 10 THEN '5-10'
+        WHEN Total_amount >= 10 AND Total_amount < 15 THEN '10-15'
+        WHEN Total_amount >= 15 AND Total_amount < 20 THEN '15-20'
+        WHEN Total_amount >= 20 AND Total_amount < 25 THEN '20-25'
+        WHEN Total_amount >= 25 AND Total_amount < 30 THEN '25-30'
+        WHEN Total_amount >= 30 AND Total_amount <= 35 THEN '30-35'
+        ELSE '35+'
+		END 
+ORDER BY 2
