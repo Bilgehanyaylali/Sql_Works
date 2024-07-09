@@ -1,0 +1,13 @@
+SELECT
+oct.lpep_pickup_day_of_week,
+oct.oct_total,
+sep.sep_total,
+oct_total-sep_total
+FROM
+(SELECT lpep_pickup_day_of_week, SUM(Total_amount) AS oct_total
+FROM oct GROUP BY lpep_pickup_day_of_week) AS OCT
+JOIN
+(SELECT lpep_pickup_day_of_week, SUM(Total_amount) AS sep_total
+FROM sep GROUP BY lpep_pickup_day_of_week) AS SEP
+ON OCT.lpep_pickup_day_of_week=SEP.lpep_pickup_day_of_week
+ORDER BY 1
