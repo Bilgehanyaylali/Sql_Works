@@ -1,0 +1,7 @@
+SELECT 
+lpep_pickup_datetime,
+Passenger_count,
+Total_amount,
+SUM(Total_amount) OVER (ORDER BY lpep_pickup_datetime) AS Cumulative_Sum
+FROM sep
+WHERE driver_id=1
