@@ -1,0 +1,13 @@
+SELECT 
+		driver_id,
+		lpep_pickup_datetime,
+		Total_amount,
+		rank_of_total_amount
+FROM (SELECT 
+		driver_id,
+		lpep_pickup_datetime,
+		Total_amount,
+		ROW_NUMBER() OVER(PARTITION BY driver_id ORDER BY Total_amount) AS rank_of_total_amount
+		FROM sep ) AS ranked_list
+WHERE rank_of_total_amount <=3
+ORDER BY 1,3
