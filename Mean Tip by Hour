@@ -1,0 +1,6 @@
+SELECT
+DATEPART(HOUR, lpep_dropoff_datetime) as TRAVEL_HOUR,
+avg (Tip_amount) as AVG_Tip
+FROM sep
+GROUP BY DATEPART(HOUR, lpep_dropoff_datetime)
+ORDER BY 1
