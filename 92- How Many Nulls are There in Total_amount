@@ -1,0 +1,4 @@
+SELECT
+COUNT(*)
+FROM sep
+WHERE total_amount IS NULL
