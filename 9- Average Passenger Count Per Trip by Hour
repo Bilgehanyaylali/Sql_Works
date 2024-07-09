@@ -1,0 +1,5 @@
+SELECT
+lpep_pickup_hour ,AVG(CAST(Passenger_count AS DECIMAL(10, 2)))  AS avg_passenger
+FROM sep
+GROUP BY lpep_pickup_hour
+ORDER BY 1
