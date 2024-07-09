@@ -1,0 +1,8 @@
+SELECT *,
+OCT_total-SEP_total
+FROM 
+(SELECT driver_id, sum(Total_amount) AS OCT_total From oct GROUP BY driver_id) AS OCT
+LEFT JOIN
+(SELECT driver_id, sum(Total_amount) AS SEP_total From sep GROUP BY driver_id) AS SEP 
+ON OCT.driver_id=SEP.driver_id
+ORDER BY 1
