@@ -1,0 +1,4 @@
+SELECT TOP 1
+trip_id, lpep_pickup_datetime,Total_amount 
+FROM sep 
+ORDER BY Total_amount DESC
