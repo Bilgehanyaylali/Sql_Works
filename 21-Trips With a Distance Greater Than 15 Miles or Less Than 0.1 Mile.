@@ -1,0 +1,12 @@
+SELECT 
+    trip_id, 
+    Trip_distance 
+FROM sep
+WHERE Trip_distance >= 15
+UNION
+SELECT
+    trip_id, 
+    Trip_distance 
+FROM sep
+WHERE Trip_distance <= 0.1
+ORDER BY Trip_distance DESC
