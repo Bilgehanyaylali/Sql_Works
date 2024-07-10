@@ -1,6 +1,6 @@
 SELECT TOP 1
-Total_amount,
-Trip_distance, 
+	Total_amount,
+	Trip_distance, 
 CASE
 	WHEN Trip_distance=0 THEN  NULL
 	ELSE (Total_amount/Trip_distance)
