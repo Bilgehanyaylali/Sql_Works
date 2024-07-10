@@ -1,8 +1,8 @@
 SELECT 
-		driver_id,
-		lpep_pickup_datetime,
-		Total_amount,
-		rank_of_total_amount
+	driver_id,
+	lpep_pickup_datetime,
+	Total_amount,
+	rank_of_total_amount
 FROM (SELECT 
 		driver_id,
 		lpep_pickup_datetime,
