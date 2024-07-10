@@ -1,6 +1,6 @@
 SELECT TOP 10
-driver_id,
-Total_amount
+    driver_id,
+    Total_amount
 FROM sep
 WHERE driver_id =1
 ORDER BY 2
