@@ -1,10 +1,1 @@
-SELECT
-	table1.driver_id,
-	table1.trip_id AS current_trip_id,
-    table1.Total_amount AS current_total_amount,
-    table2.trip_id AS previous_trip_id,
-    table2.Total_amount AS next_total_amount
-FROM sep AS table1
-JOIN sep table2 ON table1.trip_id=table2.trip_id-1
-WHERE
-table1.Total_amount < table2.Total_amount
+
