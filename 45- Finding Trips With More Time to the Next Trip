@@ -1,0 +1,9 @@
+SELECT
+	table1.driver_id,
+	table1.trip_id AS current_trip_id,
+    	table1.travel_duration AS current_travel_duration,
+   	table2.trip_id AS previous_trip_id,
+   	table2.travel_duration AS next_travel_duration
+FROM sep AS table1
+JOIN sep table2 ON table1.trip_id=table2.trip_id-1
+WHERE table1.travel_duration < table2.travel_duration
