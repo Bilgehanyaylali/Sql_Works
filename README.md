@@ -9,6 +9,4 @@ This project aims to perform detailed analyses on the NYC Taxi Trip Data to answ
 
 The data for this project is sourced from the New York City Taxi Trip Data, which includes detailed information about taxi trips, such as pickup and drop-off dates and times, trip distances, fare amounts, and more.
 
-**Project Structure**
 
-The project consists of a series of SQL queries organized to address specific analytical questions. The SQL scripts are located in the queries directory.
