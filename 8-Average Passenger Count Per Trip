@@ -1,3 +1,0 @@
-SELECT
-AVG(CAST(Passenger_count AS DECIMAL(10, 2))) 
-FROM sep
