@@ -1,8 +1,0 @@
-SELECT *, 
-count_travel_oct-count_travel_sep AS travel_count_differences
-FROM
-(SELECT driver_id, COUNT(*) AS count_travel_oct FROM oct GROUP BY driver_id) AS OCT
-LEFT JOIN
-(SELECT driver_id, COUNT(*) AS count_travel_sep FROM sep GROUP BY driver_id) AS SEP
-ON OCT.driver_id=SEP.driver_id
-ORDER BY 1
