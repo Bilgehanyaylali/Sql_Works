@@ -1,5 +1,0 @@
-SELECT TOP 1
-    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY Total_amount) 
-    OVER () AS median
-FROM 
-    sep
