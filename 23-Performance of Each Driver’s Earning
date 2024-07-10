@@ -1,6 +1,7 @@
-SELECT driver_id,
+SELECT
+    driver_id,
     CASE
-        WHEN Total_amount >= 0 AND Total_amount < 5 THEN '0-5'
+       	WHEN Total_amount >= 0 AND Total_amount < 5 THEN '0-5'
         WHEN Total_amount >= 5 AND Total_amount < 10 THEN '5-10'
         WHEN Total_amount >= 10 AND Total_amount < 15 THEN '10-15'
         WHEN Total_amount >= 15 AND Total_amount < 20 THEN '15-20'
@@ -12,7 +13,7 @@ SELECT driver_id,
     COUNT(*) AS Trip_count
 FROM sep
 GROUP BY driver_id,
-CASE
+    CASE
         WHEN Total_amount >= 0 AND Total_amount < 5 THEN '0-5'
         WHEN Total_amount >= 5 AND Total_amount < 10 THEN '5-10'
         WHEN Total_amount >= 10 AND Total_amount < 15 THEN '10-15'
@@ -21,5 +22,5 @@ CASE
         WHEN Total_amount >= 25 AND Total_amount < 30 THEN '25-30'
         WHEN Total_amount >= 30 AND Total_amount <= 35 THEN '30-35'
         ELSE '35+'
-		END 
+    END 
 ORDER BY 1
