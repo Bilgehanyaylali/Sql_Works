@@ -1,6 +1,6 @@
-
 SELECT
-RateCodeID ,SUM(Passenger_count) AS total_passengers
+  RateCodeID ,
+  SUM(Passenger_count) AS total_passengers
 FROM sep
 WHERE RateCodeID=2 or RateCodeID=3
 GROUP BY RateCodeID
