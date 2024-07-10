@@ -1,0 +1,10 @@
+SELECT 
+    oct.VendorID,revenue_oct,revenue_sep,trip_count_oct,trip_count_sep,trip_mile_oct,trip_mile_sep
+FROM
+      (SELECT VendorID, sum(Total_amount) AS revenue_oct, count(trip_id) AS trip_count_oct, 
+      sum(Passenger_count) AS Passenger_count_oct, sum(Trip_distance) AS trip_mile_oct FROM oct group by VendorID) AS OCT
+JOIN
+      (SELECT VendorID, sum(Total_amount) AS revenue_sep, count(trip_id) AS trip_count_sep, 
+      sum(Passenger_count) AS Passenger_count_sep,sum(Trip_distance) AS trip_mile_sep FROM sep group by VendorID) as SEP
+ON OCT.VendorID=SEP.VendorID
+ORDER BY 1
